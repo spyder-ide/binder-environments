@@ -68,5 +68,6 @@ dependencies:
 
 # Required for jupyter-desktop-server
 - websockify
+- nbgitpuller
 - pip:
     - jupyter-desktop-server
