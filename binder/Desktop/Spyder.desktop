@@ -1,8 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Spyder 4.x
-Exec=/bin/bash -c "exec ${HOME}/spyder/bootstrap.py"
-# FIXME: Don't hardcode Path?
-Icon=/home/jovyan/spyder/img_src/spyder.svg
+Name=Spyder
+Exec=spyder --project /home/jovyan/Spyder-Workshop /home/jovyan/Spyder-Workshop/workshop_solutions.py
+Icon=/home/jovyan/binder/spyder.svg
 Path=/home/jovyan/Desktop
