@@ -1,8 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Web Browser
+Name=Spyder workshop
 Exec=/bin/bash -c "exec ${HOME}/binder/web_browser/start.py"
-# FIXME: Don't hardcode Path?
-Icon=/home/jovyan/binder/web_browser/browser.png
+Icon=/home/jovyan/binder/web_browser/workshop.png
 Path=/home/jovyan/Desktop
