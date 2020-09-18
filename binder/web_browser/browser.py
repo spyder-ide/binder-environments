@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
         new_tab_action = QAction(QIcon(os.path.join(IMAGES, 'ui-tab--plus.png')), "New Tab", self)
         new_tab_action.setShortcut("Alt+T")
         new_tab_action.setStatusTip("Open a new tab")
-        new_tab_action.triggered.connect(lambda _: self.add_new_tab(QUrl('http://www.google.com'), 'Homepage'))
+        new_tab_action.triggered.connect(lambda _: self.add_new_tab(QUrl('http://www.google.com'), 'Spyder Workshop'))
         file_menu.addAction(new_tab_action)
 
         new_tab_action = QAction(QIcon(os.path.join(IMAGES, 'ui-tab--plus.png')), "Go to Spyder repo", self)
@@ -140,12 +140,12 @@ class MainWindow(QMainWindow):
         navigate_mozarella_action.triggered.connect(self.navigate_mozarella)
         help_menu.addAction(navigate_mozarella_action)
 
-        self.add_new_tab(QUrl('https://www.google.com'), 'Homepage')
+        self.add_new_tab(QUrl('https://github.com/juanis2112/Spyder-Workshop/blob/master/README.md'), 'Spyder Workshop')
 
         self.show()
 
-        self.setWindowTitle("Web browser")
-        self.setWindowIcon(QIcon(os.path.join(IMAGES, 'ma-icon-64.png')))
+        self.setWindowTitle("Spyder Workshop")
+        self.setWindowIcon(QIcon(os.path.join(HERE, 'browser.png')))
 
     def add_new_tab(self, qurl=None, label="Blank"):
 
@@ -164,7 +164,13 @@ class MainWindow(QMainWindow):
                                    self.update_urlbar(qurl, browser))
 
         browser.loadFinished.connect(lambda _, i=i, browser=browser:
-                                     self.tabs.setTabText(i, browser.page().title()))
+                                     self.on_load_finished(i, browser))
+
+    def on_load_finished(self, idx, browser):
+        title = browser.page().title()
+        if 'Spyder-Workshop/README.md' and 'GitHub' in title:
+            title = 'Spyder Workshop'
+        self.tabs.setTabText(idx, title)
 
     def tab_open_doubleclick(self, i):
         if i == -1:  # No tab under the click
@@ -220,7 +226,7 @@ class MainWindow(QMainWindow):
                 f.write(html.encode('utf8'))
 
     def navigate_home(self):
-        self.tabs.currentWidget().setUrl(QUrl("http://www.google.com"))
+        self.tabs.currentWidget().setUrl(QUrl("https://github.com/juanis2112/Spyder-Workshop/blob/master/README.md"))
 
     def navigate_to_url(self):  # Does not receive the Url
         q = QUrl(self.urlbar.text())
