@@ -107,14 +107,13 @@ class MainWindow(QMainWindow):
         new_tab_action = QAction(QIcon(os.path.join(IMAGES, 'ui-tab--plus.png')), "New Tab", self)
         new_tab_action.setShortcut("Alt+T")
         new_tab_action.setStatusTip("Open a new tab")
-        new_tab_action.triggered.connect(lambda _: self.add_new_tab(QUrl('http://www.google.com'), 'Spyder Workshop'))
+        new_tab_action.triggered.connect(lambda _: self.add_new_tab(QUrl('http://www.google.com'), 'Google'))
         file_menu.addAction(new_tab_action)
 
-        new_tab_action = QAction(QIcon(os.path.join(IMAGES, 'ui-tab--plus.png')), "Go to Spyder repo", self)
-        new_tab_action.setShortcut("Alt+S")
-        new_tab_action.setStatusTip("Open a new tab")
-        new_tab_action.triggered.connect(lambda _: self.add_new_tab(QUrl('http://github.com/spyder-ide/spyder'), 'Spyder'))
-        file_menu.addAction(new_tab_action)
+        website_action = QAction(QIcon(os.path.join(IMAGES, 'ui-tab--plus.png')), "Go to Spyder website", self)
+        website_action.setShortcut("Alt+S")
+        website_action.triggered.connect(lambda _: self.add_new_tab(QUrl('https://www.spyder-ide.org/'), 'Spyder Website'))
+        file_menu.addAction(website_action)
 
         open_file_action = QAction(QIcon(os.path.join(IMAGES, 'disk--arrow.png')), "Open file...", self)
         open_file_action.setShortcut("Alt+O")
@@ -129,16 +128,9 @@ class MainWindow(QMainWindow):
 
         help_menu = self.menuBar().addMenu("&Help")
 
-        about_action = QAction(QIcon(os.path.join(IMAGES, 'question.png')), "About Mozarella Ashbadger", self)
-        about_action.setStatusTip("Find out more about Mozarella Ashbadger")  # Hungry!
-        about_action.triggered.connect(self.about)
-        help_menu.addAction(about_action)
-
-        navigate_mozarella_action = QAction(QIcon(os.path.join(IMAGES, 'lifebuoy.png')),
-                                            "Mozarella Ashbadger Homepage", self)
-        navigate_mozarella_action.setStatusTip("Go to Mozarella Ashbadger Homepage")
-        navigate_mozarella_action.triggered.connect(self.navigate_mozarella)
-        help_menu.addAction(navigate_mozarella_action)
+        docs_action = QAction(QIcon(os.path.join(IMAGES, 'lifebuoy.png')), "Spyder documentation", self)
+        docs_action.triggered.connect(self.navigate_docs)
+        help_menu.addAction(docs_action)
 
         self.add_new_tab(QUrl('https://github.com/juanis2112/Spyder-Workshop/blob/master/README.md'), 'Spyder Workshop')
 
@@ -170,6 +162,8 @@ class MainWindow(QMainWindow):
         title = browser.page().title()
         if 'Spyder-Workshop/README.md' and 'GitHub' in title:
             title = 'Spyder Workshop'
+        elif "Welcome to Spyder’s Documentation" in title:
+            title = 'Spyder documentation'
         self.tabs.setTabText(idx, title)
 
     def tab_open_doubleclick(self, i):
@@ -196,8 +190,8 @@ class MainWindow(QMainWindow):
         #self.setWindowTitle("%s - Mozarella Ashbadger" % title)
         pass
 
-    def navigate_mozarella(self):
-        self.tabs.currentWidget().setUrl(QUrl("https://www.udemy.com/522076"))
+    def navigate_docs(self):
+        self.add_new_tab(QUrl("http://docs.spyder-ide.org/current/index.html"), 'Spyder documentation')
 
     def about(self):
         dlg = AboutDialog()
@@ -227,6 +221,8 @@ class MainWindow(QMainWindow):
 
     def navigate_home(self):
         self.tabs.currentWidget().setUrl(QUrl("https://github.com/juanis2112/Spyder-Workshop/blob/master/README.md"))
+        idx = self.tabs.currentIndex()
+        self.tabs.setTabText(idx, "Spyder Workshop")
 
     def navigate_to_url(self):  # Does not receive the Url
         q = QUrl(self.urlbar.text())
