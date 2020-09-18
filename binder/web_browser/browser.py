@@ -110,11 +110,6 @@ class MainWindow(QMainWindow):
         new_tab_action.triggered.connect(lambda _: self.add_new_tab(QUrl('http://www.google.com'), 'Google'))
         file_menu.addAction(new_tab_action)
 
-        website_action = QAction(QIcon(os.path.join(IMAGES, 'ui-tab--plus.png')), "Go to Spyder website", self)
-        website_action.setShortcut("Alt+S")
-        website_action.triggered.connect(lambda _: self.add_new_tab(QUrl('https://www.spyder-ide.org/'), 'Spyder Website'))
-        file_menu.addAction(website_action)
-
         open_file_action = QAction(QIcon(os.path.join(IMAGES, 'disk--arrow.png')), "Open file...", self)
         open_file_action.setShortcut("Alt+O")
         open_file_action.setStatusTip("Open from file")
