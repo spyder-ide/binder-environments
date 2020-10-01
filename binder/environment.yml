@@ -1,9 +1,5 @@
 dependencies:
-# We can not refer to an environment.yml file from another
-# So to get performant launches on mybinder.org, we have copied
-# the contents of this requirements/conda.txt to this file.yml.
-# Please *DO NOT* make changes directly just to here - make changes
-# to requirements/conda.txt, and copy it here.
+# Main dependencies
 - applaunchservices >=0.1.7
 - atomicwrites >=1.2.0
 - chardet >=2.0.0
@@ -33,7 +29,7 @@ dependencies:
 - pyzmq >=17
 - qdarkstyle >=2.8
 - qtawesome >=0.5.7
-- qtconsole >=4.6.0
+- qtconsole >=4.7.7
 - qtpy >=1.5.0
 - rtree >=0.8.3
 - sphinx >=0.6.6
@@ -43,11 +39,7 @@ dependencies:
 - three-merge >=0.1.1
 - watchdog
 
-# We can not refer to an environment.yml file from another
-# So to get performant launches on mybinder.org, we have copied
-# the contents of this requirements/tests.txt to this file.yml.
-# Please *DO NOT* make changes directly just to here - make changes
-# to requirements/tests.txt, and copy it here.
+# Testing dependencies
 - coverage <5.0
 - cython
 - flaky
