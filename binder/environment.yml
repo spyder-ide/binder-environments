@@ -1,5 +1,5 @@
 dependencies:
-- spyder
+- spyder 4.2.0
 - cython
 - matplotlib
 - pandas
@@ -7,6 +7,9 @@ dependencies:
 - scikit-learn
 - scipy
 - sympy
+# This is to avoid pulling an older IPython version, which prints
+# unnecessary warnings while using our debugger.
+- ipython >=7.17
 
 # This is required to avoid conda complaining about it.
 - pip
