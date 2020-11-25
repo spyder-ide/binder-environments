@@ -131,6 +131,10 @@ from spyder.config.base import get_image_path
 from spyder.py3compat import PY3
 MAIN_APP = qapplication()
 
+font = MAIN_APP.font()
+font.setPointSize(12)
+MAIN_APP.setFont(font)
+
 if PYQT5:
     APP_ICON = QIcon(get_image_path("spyder.svg"))
 else:
@@ -150,7 +154,7 @@ from spyder.config.base import _, get_image_path, DEV, get_safe_mode
 if not running_under_pytest():
     SPLASH = QSplashScreen(QPixmap(get_image_path('splash.svg')))
     SPLASH_FONT = SPLASH.font()
-    SPLASH_FONT.setPixelSize(10)
+    SPLASH_FONT.setPixelSize(14)
     SPLASH.setFont(SPLASH_FONT)
     SPLASH.show()
     SPLASH.showMessage(_("Initializing..."),
