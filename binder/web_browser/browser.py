@@ -127,7 +127,7 @@ class MainWindow(QMainWindow):
         docs_action.triggered.connect(self.navigate_docs)
         help_menu.addAction(docs_action)
 
-        self.add_new_tab(QUrl('https://github.com/juanis2112/Spyder-Workshop/blob/master/README.md'), 'Spyder Workshop')
+        self.add_new_tab(QUrl('https://github.com/juanis2112/Spyder-Workshop/blob/spanish/README.md'), 'Spyder Workshop')
 
         self.show()
 
@@ -215,7 +215,7 @@ class MainWindow(QMainWindow):
                 f.write(html.encode('utf8'))
 
     def navigate_home(self):
-        self.tabs.currentWidget().setUrl(QUrl("https://github.com/juanis2112/Spyder-Workshop/blob/master/README.md"))
+        self.tabs.currentWidget().setUrl(QUrl("https://github.com/juanis2112/Spyder-Workshop/blob/spanish/README.md"))
         idx = self.tabs.currentIndex()
         self.tabs.setTabText(idx, "Spyder Workshop")
 
