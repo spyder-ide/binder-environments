@@ -6,10 +6,10 @@ dependencies:
 - cloudpickle >=0.5.0
 - cookiecutter >=1.6.0
 - diff-match-patch >=20181111
-- intervaltree
-- ipython >=4.0
+- intervaltree >=3.0.2
+- ipython >=7.6.0
 - jedi =0.17.2
-- keyring
+- keyring >=17.0.0
 - nbconvert >=4.0
 - numpydoc >=0.6.0
 - paramiko >=2.4.0
@@ -20,7 +20,7 @@ dependencies:
 - pygments >=2.0
 - pylint >=1.0
 - pyls-black >=0.4.6
-- pyls-spyder >=0.1.0
+- pyls-spyder >=0.3.2
 - pyqt <5.13
 - pyyaml
 # NOTE: There's no need to set constraints for python-language-server
@@ -30,15 +30,17 @@ dependencies:
 - pyzmq >=17
 - qdarkstyle >=2.8
 - qtawesome >=0.5.7
-- qtconsole >=4.7.7
+- qtconsole >=5.0.3
 - qtpy >=1.5.0
 - rtree >=0.8.3
+- setuptools >=39.0.0
 - sphinx >=0.6.6
 # NOTE: There's no need to set constraints for spyder-kernels here
 # because Spyder uses the subrepo for it when started in Binder.
 - spyder-kernels
+- textdistance >=4.2.0
 - three-merge >=0.1.1
-- watchdog
+- watchdog >=0.10.3,<2.0.0
 
 # Testing dependencies
 - coverage <5.0
