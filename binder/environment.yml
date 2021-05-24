@@ -1,6 +1,5 @@
 dependencies:
-# TODO: Don't forget to remove the mainwindow.py patch in 4.2.1!
-- spyder 4.2.0
+- spyder 5.0.3
 - cython
 - matplotlib
 - pandas

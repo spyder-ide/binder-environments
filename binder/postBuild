@@ -15,7 +15,3 @@ jupyter serverextension enable --py nbgitpuller --sys-prefix
 # For Spyder
 mkdir -p ${HOME}/.config/spyder-py3/config
 cp binder/spyder/spyder.ini ${HOME}/.config/spyder-py3/config/
-
-# Patch mainwindow to fix error when opening projects from the command line
-# TODO: Remove in 4.2.1!!
-cp binder/spyder/mainwindow.py /srv/conda/envs/notebook/lib/python3.7/site-packages/spyder/app
