@@ -9,6 +9,7 @@ dependencies:
 - intervaltree >=3.0.2
 - ipython >=7.6.0
 - jedi =0.17.2
+- jsonschema >=3.2.0
 - keyring >=17.0.0
 - nbconvert >=4.0
 - numpydoc >=0.6.0
@@ -20,19 +21,19 @@ dependencies:
 - pygments >=2.0
 - pylint >=1.0
 - pyls-black >=0.4.6
-- pyls-spyder >=0.3.2
+- pyls-spyder >=0.3.2,<0.4.0
 - pyqt <5.13
-- pyyaml
 # NOTE: There's no need to set constraints for python-language-server
 # here because Spyder uses the subrepo for it when started in Binder.
 - python-language-server
 - pyxdg >=0.26
 - pyzmq >=17
-- qdarkstyle >=2.8
-- qtawesome >=0.5.7
-- qtconsole >=5.0.3
+- qdarkstyle =3.0.2
+- qstylizer >=0.1.10
+- qtawesome >=1.0.2
+- qtconsole >=5.1.0
 - qtpy >=1.5.0
-- rtree >=0.8.3
+- rtree >=0.9.7
 - setuptools >=39.0.0
 - sphinx >=0.6.6
 # NOTE: There's no need to set constraints for spyder-kernels here
@@ -40,24 +41,22 @@ dependencies:
 - spyder-kernels
 - textdistance >=4.2.0
 - three-merge >=0.1.1
-- watchdog >=0.10.3,<2.0.0
+- watchdog >=0.10.3
 
 # Testing dependencies
-- coverage <5.0
+- coverage
 - cython
 - flaky
 - matplotlib
-- mock
 - pandas
 - pillow
-- pytest <5.0
-- pytest-mock
+- pytest <6.0
 - pytest-cov
-- pytest-qt
-- pytest-ordering
 - pytest-lazy-fixture
-- pytest-faulthandler <2.0
+- pytest-ordering
+- pytest-qt
 - pytest-xvfb
+- pyyaml
 - scipy
 - sympy
 
