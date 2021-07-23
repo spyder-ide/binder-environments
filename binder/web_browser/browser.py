@@ -123,11 +123,11 @@ class MainWindow(QMainWindow):
 
         help_menu = self.menuBar().addMenu("&Help")
 
-        docs_action = QAction(QIcon(os.path.join(IMAGES, 'lifebuoy.png')), "Spyder documentation", self)
+        docs_action = QAction(QIcon(os.path.join(IMAGES, 'lifebuoy.png')), "Documentación de Spyder", self)
         docs_action.triggered.connect(self.navigate_docs)
         help_menu.addAction(docs_action)
 
-        self.add_new_tab(QUrl('https://github.com/juanis2112/Spyder-Workshop/blob/spanish/README.md'), 'Spyder Workshop')
+        self.add_new_tab(QUrl('https://github.com/steff456/WorkshopTransposones'), 'Workshop de transposones con Spyder')
 
         self.show()
 
@@ -155,10 +155,10 @@ class MainWindow(QMainWindow):
 
     def on_load_finished(self, idx, browser):
         title = browser.page().title()
-        if 'Spyder-Workshop/README.md' and 'GitHub' in title:
-            title = 'Spyder Workshop'
+        if 'WorkshopTransposones' and 'GitHub' in title:
+            title = 'Workshop de transposones con Spyder'
         elif "Welcome to Spyder’s Documentation" in title:
-            title = 'Spyder documentation'
+            title = 'Documentación de Spyder'
         self.tabs.setTabText(idx, title)
 
     def tab_open_doubleclick(self, i):
@@ -186,7 +186,7 @@ class MainWindow(QMainWindow):
         pass
 
     def navigate_docs(self):
-        self.add_new_tab(QUrl("http://docs.spyder-ide.org/current/index.html"), 'Spyder documentation')
+        self.add_new_tab(QUrl("http://docs.spyder-ide.org/current/index.html"), 'Documentación de Spyder')
 
     def about(self):
         dlg = AboutDialog()
@@ -215,9 +215,9 @@ class MainWindow(QMainWindow):
                 f.write(html.encode('utf8'))
 
     def navigate_home(self):
-        self.tabs.currentWidget().setUrl(QUrl("https://github.com/juanis2112/Spyder-Workshop/blob/spanish/README.md"))
+        self.tabs.currentWidget().setUrl(QUrl("https://github.com/steff456/WorkshopTransposones"))
         idx = self.tabs.currentIndex()
-        self.tabs.setTabText(idx, "Spyder Workshop")
+        self.tabs.setTabText(idx, "Workshop de transposones con Spyder")
 
     def navigate_to_url(self):  # Does not receive the Url
         q = QUrl(self.urlbar.text())

@@ -2,6 +2,6 @@
 Version=1.0
 Type=Application
 Name=Spyder
-Exec=spyder --project /home/jovyan/Spyder-Workshop /home/jovyan/Spyder-Workshop/workshop_solutions.py
+Exec=spyder --project /home/jovyan/WorkshopTransposones
 Icon=/home/jovyan/binder/spyder/spyder.svg
 Path=/home/jovyan/Desktop
