@@ -7,11 +7,16 @@ dependencies:
 - scikit-learn
 - scipy
 - sympy
+
 # This is to avoid pulling an older IPython version
 - ipython >=7.25
+
 # For the workshop
-- seaborn
-- pyarrow
+- numpy
+- lxml
+- tqdm
+- multitasking
+- requests
 
 # This is required to avoid conda complaining about it.
 - pip
@@ -19,5 +24,8 @@ dependencies:
 # Required for jupyter-desktop-server
 - websockify
 - nbgitpuller
+
 - pip:
     - jupyter-desktop-server
+    - yfinance
+    - Historic-Crypto
