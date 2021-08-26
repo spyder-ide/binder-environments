@@ -127,9 +127,7 @@ class MainWindow(QMainWindow):
         docs_action.triggered.connect(self.navigate_docs)
         help_menu.addAction(docs_action)
 
-        self.add_new_tab(QUrl('http://docs.spyder-ide.org/current/workshops/scientific-computing.html'), 'Workshop')
-        self.add_new_tab(QUrl('https://figshare.com/articles/dataset/OKCupid_Datasets/14987388'), 'OKCupid Datasets')
-        self.tabs.setCurrentIndex(0)
+        self.add_new_tab(QUrl('http://docs.spyder-ide.org/current/workshops/financial.html'), 'Workshop')
 
         self.show()
 
@@ -157,7 +155,7 @@ class MainWindow(QMainWindow):
 
     def on_load_finished(self, idx, browser):
         title = browser.page().title()
-        if 'Scientific Computing' in title:
+        if 'Financial Data' in title:
             title = 'Workshop'
         elif "Welcome to Spyder’s Documentation" in title:
             title = 'Spyder documentation'
@@ -217,7 +215,7 @@ class MainWindow(QMainWindow):
                 f.write(html.encode('utf8'))
 
     def navigate_home(self):
-        self.tabs.currentWidget().setUrl(QUrl("http://docs.spyder-ide.org/current/workshops/scientific-computing.html"))
+        self.tabs.currentWidget().setUrl(QUrl("http://docs.spyder-ide.org/current/workshops/financial.html"))
         idx = self.tabs.currentIndex()
         self.tabs.setTabText(idx, "Workshop")
 
