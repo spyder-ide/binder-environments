@@ -127,11 +127,11 @@ class MainWindow(QMainWindow):
         docs_action.triggered.connect(self.navigate_docs)
         help_menu.addAction(docs_action)
 
-        self.add_new_tab(QUrl('https://github.com/steff456/WorkshopCardio'), 'Spyder Workshop')
+        self.add_new_tab(QUrl('https://github.com/steff456/WorkshopCardio'), 'Workshop')
 
         self.show()
 
-        self.setWindowTitle("Spyder Workshop")
+        self.setWindowTitle("Workshop")
         self.setWindowIcon(QIcon(os.path.join(HERE, 'browser.png')))
 
     def add_new_tab(self, qurl=None, label="Blank"):
@@ -156,7 +156,7 @@ class MainWindow(QMainWindow):
     def on_load_finished(self, idx, browser):
         title = browser.page().title()
         if 'Spyder-Workshop/README.md' and 'GitHub' in title:
-            title = 'Spyder Workshop'
+            title = 'Workshop'
         elif "Welcome to Spyder’s Documentation" in title:
             title = 'Spyder documentation'
         self.tabs.setTabText(idx, title)
@@ -217,7 +217,7 @@ class MainWindow(QMainWindow):
     def navigate_home(self):
         self.tabs.currentWidget().setUrl(QUrl("https://github.com/steff456/WorkshopCardio"))
         idx = self.tabs.currentIndex()
-        self.tabs.setTabText(idx, "Spyder Workshop")
+        self.tabs.setTabText(idx, "Workshop")
 
     def navigate_to_url(self):  # Does not receive the Url
         q = QUrl(self.urlbar.text())
