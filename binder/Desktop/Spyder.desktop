@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Spyder master
-Exec=/bin/bash -c "exec ${HOME}/spyder/bootstrap.py"
+Exec=gnome-terminal --geometry 120x24 -e "/bin/bash -c 'exec ${HOME}/spyder/bootstrap.py'"
 # FIXME: Don't hardcode Path?
 Icon=/home/jovyan/spyder/img_src/spyder.svg
 Path=/home/jovyan/Desktop
