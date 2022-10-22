@@ -1,5 +1,5 @@
 dependencies:
-- spyder 5.1.5
+- spyder 5.3.3
 - cython
 - matplotlib
 - pandas
@@ -9,7 +9,6 @@ dependencies:
 - sympy
 # This is to avoid pulling an older IPython version
 - ipython >=7.25
-
 # This is required to avoid conda complaining about it.
 - pip
 
