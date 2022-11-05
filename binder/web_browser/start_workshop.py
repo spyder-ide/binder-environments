@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
 
-from browser import main
+from workshop import main
 main()
