@@ -1,5 +1,6 @@
 dependencies:
-- spyder 5.3.3
+- python <3.11
+- spyder 5.4.0
 - cython
 - matplotlib
 - pandas
