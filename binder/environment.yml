@@ -1,6 +1,6 @@
 dependencies:
 - python <3.11
-- spyder 5.5.0
+- spyder 5.5.1
 - cython
 - matplotlib
 - pandas
@@ -8,8 +8,6 @@ dependencies:
 - scikit-learn
 - scipy
 - sympy
-# This is to avoid pulling an older IPython version
-- ipython >=7.25
 # This is required to avoid conda complaining about it.
 - pip
 
