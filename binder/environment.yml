@@ -3,7 +3,6 @@ channels:
   - conda-forge
 dependencies:
 # Main dependencies
-- python <3.11
 - aiohttp >=3.9.3
 - asyncssh >=2.0.0,<3.0.0
 - atomicwrites >=1.2.0
