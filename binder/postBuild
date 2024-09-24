@@ -10,7 +10,7 @@ cp binder/xsettings.xml ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/
 cp binder/xfce4-panel.xml ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/
 
 # For nbgitpuller
-jupyter serverextension enable --py nbgitpuller --sys-prefix
+jupyter server extension enable --py nbgitpuller --sys-prefix
 
 # For Spyder
 mkdir -p ${HOME}/.config/spyder-py3/config
