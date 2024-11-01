@@ -77,4 +77,4 @@ dependencies:
 - websockify
 - nbgitpuller
 - pip:
-    - jupyter-desktop-server
+    - jupyter-remote-desktop-proxy
