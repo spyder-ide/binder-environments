@@ -4,7 +4,7 @@ channels:
   - conda-forge
 dependencies:
 # Main dependencies
-- python <3.12
+- python =3.12
 - aiohttp >=3.11.2
 - asyncssh >=2.14.0,<3.0.0
 - bcrypt >=4.3.0
