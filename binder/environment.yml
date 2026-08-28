@@ -77,6 +77,9 @@ dependencies:
 # This is required to avoid conda complaining about it.
 - pip
 
+# Required to prevent an error with ML-KEM
+- cryptography >48.0.0
+
 # Required for jupyter-desktop-server
 - websockify
 - nbgitpuller
